@@ -1,0 +1,586 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Variables globales */
+:root {
+    --primary-bg: #121212;
+    --secondary-bg: #1e1e1e;
+    --tertiary-bg: #2a2a2a;
+    --text-color: #e0e0e0;
+    --hover-color: #444;
+    --accent-color: yellowgreen;
+    --focus-outline: yellowgreen;
+    --font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Configuration globale */
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar-wrapper {
+    width: 100%;
+    background-color: var(--secondary-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    color: var(--accent-color);
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .menu button {
+    background-color: var(--tertiary-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .menu button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Bouton hamburger (caché par défaut) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Conteneur principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 10px;
+    flex: 1;
+}
+
+/* Colonne gauche : Programme */
+.programme {
+    flex: 0 0 calc(66.666% - 10px);
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Colonne droite : À propos du sport */
+.right-column {
+    flex: 0 0 calc(33.333% - 10px);
+    background-color: var(--tertiary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+.footer-wrapper {
+    width: 100%;
+    background-color: var(--secondary-bg);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px 20px;
+    color: var(--text-color);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .programme {
+        flex: 0 0 100%;
+    }
+    .right-column {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .navbar .menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--secondary-bg);
+        width: 100%;
+        z-index: 999;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    }
+    
+    .navbar .menu.active {
+        display: flex;
+    }
+    
+    .navbar .menu button {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+        padding: 12px 15px;
+    }
+}
+
+h1 {
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive: 48px à 64px */
+    font-weight: bold; /* Texte en gras pour plus d'impact */
+    line-height: 1.2; /* Bonne lisibilité pour les grandes tailles */
+    margin-bottom: 1rem; /* Espacement sous le titre */
+    color: #E0E0E0; /* Gris clair pour éviter le contraste agressif */
+    text-align: center; /* Centré pour un effet visuel agréable */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Légère ombre pour lisibilité */
+}
+
+h2 {
+    font-size: clamp(1.2rem, 2.6vw, 1.6rem); /* Responsive: 48px à 64px */
+    font-weight: bold; /* Texte en gras pour plus d'impact */
+    line-height: 1.2; /* Bonne lisibilité pour les grandes tailles */
+    margin: 0.8rem 0; /* Espacement sous le titre */
+    color: #E0E0E0; /* Gris clair pour éviter le contraste agressif */
+    text-align: center; /* Centré pour un effet visuel agréable */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Légère ombre pour lisibilité */
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2.6vw, 1.6rem); /* Responsive: 48px à 64px */
+    font-weight: bold; /* Texte en gras pour plus d'impact */
+    line-height: 1.2; /* Bonne lisibilité pour les grandes tailles */
+    margin: 0.8rem 0; /* Espacement sous le titre */
+    color: #E0E0E0; /* Gris clair pour éviter le contraste agressif */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Légère ombre pour lisibilité */
+}
+
+/* Champ de filtre */
+.filter-container {
+    margin-bottom: 20px;
+}
+
+.filter-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--hover-color);
+    border-radius: 4px;
+    background-color: var(--tertiary-bg);
+    color: var(--text-color);
+}
+
+/* Liste des matchs */
+ul {
+    list-style: none;
+    padding: 0;
+    background-color: var(--tertiary-bg);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+li {
+    background: var(--tertiary-bg);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--hover-color);
+    margin: 0;
+    padding: 0;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-color);
+    width: 100%;
+    padding: 8px 8px;
+    transition: all 0.4s ease;
+}
+
+li a:hover {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,178,178,1) 40%, rgba(255,0,0,1) 100%);
+    color: black;
+    transform: translateX(5px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.time {
+    font-weight: bold;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+}
+
+.jrs {
+    text-align: center;
+    color: var(--text-color);
+    padding: 6px;
+    background-color: #0e0e0e;
+}
+
+/* Vidéo */
+#kaurukavideo {
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vi-on {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 65%;
+    background-color: #000;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.vi-on iframe, .vi-on img, .play {
+    position: absolute;
+}
+
+.play {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: .4s cubic-bezier(.25, 1, .30, 1);
+}
+
+.play:hover {
+    transform: translate(-50%, -50%) scale(1.15);
+    transition: .25s cubic-bezier(.25, 1, .30, 1);
+}
+
+.play span {
+    border-style: solid;
+    border-width: 15px 0 15px 26.7px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 5px;
+}
+
+.vi-on img {
+    width: calc(100% + 5px);
+    border: 0;
+    border-radius: 0;
+    opacity: .95;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vi-on iframe {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.servideo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 8px;
+    font-size: 12px;
+    background-color: var(--secondary-bg);
+}
+
+.servideo .change-video {
+    background-color: #000000;
+    color: #eee;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    transition: .4s;
+}
+
+.servideo .change-video.c-aktif, .servideo .change-video:hover {
+    background: rgb(19 161 14);
+    transition: .4s;
+}
+
+.icn { background: url('https://cdn.jsdelivr.net/gh/teamozz/root@main/mapkakarot.webp') no-repeat top left; width: 32px; height: 32px;  margin: 0 5px;} 
+/* Add margin for mobile devices */
+@media (max-width: 768px) { /* Adjust the max-width as per your mobile breakpoint */
+    .icn {
+        padding: 0 16px;
+    }
+}
+
+.icn.1a { background-position: 0 0; } 
+.icn.af { background-position: -42px 0; } 
+.icn.af2 { background-position: -84px 0; } 
+.icn.afcaf { background-position: -126px 0; } 
+.icn.afcan { background-position: -168px 0; } 
+.icn.afl { background-position: -210px 0; } 
+.icn.amical { background-position: -252px 0; } 
+.icn.amicali { background-position: -294px 0; } 
+.icn.ar { background-position: -336px 0; } 
+.icn.arc { background-position: -378px 0; } 
+.icn.at { background-position: -420px 0; } 
+.icn.atp { background-position: -462px 0; } 
+.icn.atpcanada { background-position: -504px 0; } 
+.icn.atpcincinnati { background-position: -546px 0; } 
+.icn.atpcn { background-position: -588px 0; } 
+.icn.atpiw { background-position: -630px 0; } 
+.icn.atpmadrid { background-position: -672px 0; } 
+.icn.atpmc { background-position: -714px 0; } 
+.icn.atpmiami { background-position: -756px 0; } 
+.icn.atpparis { background-position: -798px 0; } 
+.icn.atprome { background-position: -840px 0; } 
+.icn.au { background-position: -882px 0; } 
+.icn.Automobile { background-position: -924px 0; } 
+.icn.Baseball { background-position: -966px 0; } 
+.icn.Basket { background-position: -1008px 0; } 
+.icn.basketes { background-position: -1050px 0; } 
+.icn.basketeu { background-position: -1092px 0; } 
+.icn.basketeu2 { background-position: -1134px 0; } 
+.icn.basketfr { background-position: -1176px 0; } 
+.icn.basketfrlc { background-position: -1218px 0; } 
+.icn.be { background-position: -1260px 0; } 
+.icn.bec { background-position: -1302px 0; } 
+.icn.Biathlon { background-position: -1344px 0; } 
+.icn.Boxe { background-position: -1386px 0; } 
+.icn.br { background-position: -1428px 0; } 
+.icn.cdm2022 { background-position: -1470px 0; } 
+.icn.ch { background-position: -1512px 0; } 
+.icn.chc { background-position: -1554px 0; } 
+.icn.cl { background-position: -1596px 0; } 
+.icn.clc { background-position: -1638px 0; } 
+.icn.clsc { background-position: -1680px 0; } 
+.icn.co { background-position: -1722px 0; } 
+.icn.coc { background-position: -1764px 0; } 
+.icn.cup { background-position: -1806px 0; } 
+.icn.cyc { background-position: -1848px 0; } 
+.icn.cyces { background-position: -1890px 0; } 
+.icn.cycfr { background-position: -1932px 0; height: 27px; } 
+.icn.cycit { background-position: -1974px 0; } 
+.icn.cycuci { background-position: -2016px 0; } 
+.icn.de { background-position: -2058px 0; } 
+.icn.de2 { background-position: -2100px 0; } 
+.icn.de3 { background-position: -2142px 0; } 
+.icn.dec { background-position: -2184px 0; } 
+.icn.dk { background-position: -2226px 0; } 
+.icn.ec { background-position: -2268px 0; } 
+.icn.es { background-position: -2310px 0; } 
+.icn.es2 { background-position: -2352px 0; } 
+.icn.esc { background-position: -2394px 0; } 
+.icn.escw { background-position: -2436px 0; } 
+.icn.essc { background-position: -2478px 0; } 
+.icn.eu { background-position: -2520px 0; } 
+.icn.eu2 { background-position: -2562px 0; } 
+.icn.eu3 { background-position: -2604px 0; } 
+.icn.eueuro21 { background-position: -2646px 0; } 
+.icn.euldn { background-position: -2688px 0; } 
+.icn.euw { background-position: -2730px 0; } 
+.icn.euyl { background-position: -2772px 0; } 
+.icn.f1 { background-position: -2814px 0; } 
+.icn.f2 { background-position: -2856px 0; } 
+.icn.f3 { background-position: -2898px 0; } 
+.icn.fe { background-position: -2940px 0; } 
+.icn.fifa { background-position: -2982px 0; } 
+.icn.fifacdm { background-position: -3024px 0; } 
+.icn.fifacdmc { background-position: -3066px 0; } 
+.icn.flag-ae { background-position: -3108px 0; } 
+.icn.flag-ar { background-position: -3150px 0; } 
+.icn.flag-at { background-position: -3192px 0; } 
+.icn.flag-au { background-position: -3234px 0; } 
+.icn.flag-be { background-position: -3276px 0; } 
+.icn.flag-bg { background-position: -3318px 0; } 
+.icn.flag-bo { background-position: -3360px 0; } 
+.icn.flag-br { background-position: -3402px 0; } 
+.icn.flag-ca { background-position: -3444px 0; } 
+.icn.flag-ch { background-position: -3486px 0; } 
+.icn.flag-co { background-position: -3528px 0; } 
+.icn.flag-cu { background-position: -3570px 0; } 
+.icn.flag-cz { background-position: -3612px 0; } 
+.icn.flag-de { background-position: -3654px 0; } 
+.icn.flag-dk { background-position: -3696px 0; } 
+.icn.flag-dz { background-position: -3738px 0; } 
+.icn.flag-ec { background-position: -3780px 0; } 
+.icn.flag-eg { background-position: -3822px 0; } 
+.icn.flag-es { background-position: -3864px 0; } 
+.icn.flag-fr { background-position: -3906px 0; } 
+.icn.flag-gb { background-position: -3948px 0; } 
+.icn.flag-gr { background-position: -3990px 0; } 
+.icn.flag-gt { background-position: -4032px 0; } 
+.icn.flag-hn { background-position: -4074px 0; } 
+.icn.flag-hr { background-position: -4116px 0; } 
+.icn.flag-hu { background-position: -4158px 0; } 
+.icn.flag-in { background-position: -4200px 0; } 
+.icn.flag-jm { background-position: -4242px 0; } 
+.icn.flag-kr { background-position: -4284px 0; } 
+.icn.flag-ma { background-position: -4326px 0; } 
+.icn.flag-mx { background-position: -4368px 0; } 
+.icn.flag-nl { background-position: -4410px 0; } 
+.icn.flag-no { background-position: -4452px 0; } 
+.icn.flag-pa { background-position: -4494px 0; } 
+.icn.flag-pe { background-position: -4536px 0; } 
+.icn.flag-pl { background-position: -4578px 0; } 
+.icn.flag-pt { background-position: -4620px 0; } 
+.icn.flag-qa { background-position: -4662px 0; } 
+.icn.flag-ro { background-position: -4704px 0; } 
+.icn.flag-rs { background-position: -4746px 0; } 
+.icn.flag-ru { background-position: -4788px 0; } 
+.icn.flag-sa { background-position: -4830px 0; } 
+.icn.flag-se { background-position: -4872px 0; } 
+.icn.flag-sv { background-position: -4914px 0; } 
+.icn.flag-tn { background-position: -4956px 0; } 
+.icn.flag-tr { background-position: -4998px 0; } 
+.icn.flag-us { background-position: -5040px 0; } 
+.icn.flag-uy { background-position: -5082px 0; } 
+.icn.flag-ve { background-position: -5124px 0; } 
+.icn.Flechettes { background-position: -5166px 0; } 
+.icn.foot { background-position: -5208px 0; } 
+.icn.Foot-AUS { background-position: -5250px 0; } 
+.icn.Foot-US { background-position: -5292px 0; } 
+.icn.fr { background-position: -5334px 0; } 
+.icn.fr2 { background-position: -5376px 0; } 
+.icn.fr3 { background-position: -5418px 0; } 
+.icn.frc { background-position: -5460px 0; } 
+.icn.frcl { background-position: -5502px 0; } 
+.icn.frw { background-position: -5544px 0; } 
+.icn.Golf { background-position: -5586px 0; } 
+.icn.gr { background-position: -5628px 0; } 
+.icn.grc { background-position: -5670px 0; } 
+.icn.Hand { background-position: -5712px 0; } 
+.icn.handde { background-position: -5754px 0; } 
+.icn.handeu { background-position: -5796px 0; } 
+.icn.handeuro { background-position: -5838px 0; } 
+.icn.handfr { background-position: -5880px 0; } 
+.icn.Hockey { background-position: -5922px 0; } 
+.icn.it { background-position: -5964px 0; } 
+.icn.it2 { background-position: -6006px 0; } 
+.icn.itc { background-position: -6048px 0; } 
+.icn.itsc { background-position: -6090px 0; } 
+.icn.khl { background-position: -6132px 0; } 
+.icn.ksa { background-position: -6174px 0; } 
+.icn.la { background-position: -6216px 0; } 
+.icn.la2 { background-position: -6258px 0; } 
+.icn.m1 { background-position: -6300px 0; } 
+.icn.m2 { background-position: -6342px 0; } 
+.icn.m3 { background-position: -6384px 0; } 
+.icn.mlb { background-position: -6426px 0; } 
+.icn.MMA { background-position: -6468px 0; } 
+.icn.Moto { background-position: -6510px 0; } 
+.icn.mx { background-position: -6552px 0; } 
+.icn.mx2 { background-position: -6594px 0; } 
+.icn.mxw { background-position: -6636px 0; } 
+.icn.na { background-position: -6678px 0; } 
+.icn.nagc { background-position: -6720px 0; } 
+.icn.nalc { background-position: -6762px 0; } 
+.icn.naldn { background-position: -6804px 0; } 
+.icn.nba { background-position: -6846px 0; } 
+.icn.nfl { background-position: -6888px 0; } 
+.icn.nhl { background-position: -6930px 0; } 
+.icn.nl { background-position: -6972px 0; } 
+.icn.nlc { background-position: -7014px 0; } 
+.icn.oly { background-position: -7056px 0; } 
+.icn.pr { background-position: -7098px 0; } 
+.icn.pt { background-position: -7140px 0; } 
+.icn.ptc { background-position: -7182px 0; } 
+.icn.ptcl { background-position: -7224px 0; } 
+.icn.raw { background-position: -7266px 0; } 
+.icn.ru { background-position: -7308px 0; } 
+.icn.RugbyLeague { background-position: -7350px 0; } 
+.icn.RugbyUnion { background-position: -7392px 0; } 
+.icn.rugbyamical { background-position: -7434px 0; } 
+.icn.rugbyanc { background-position: -7476px 0; } 
+.icn.rugbyau { background-position: -7518px 0; } 
+.icn.rugbycdm { background-position: -7560px 0; } 
+.icn.rugbyeu { background-position: -7602px 0; } 
+.icn.rugbyeu2 { background-position: -7644px 0; } 
+.icn.rugbyeuro { background-position: -7686px 0; } 
+.icn.rugbyfr { background-position: -7728px 0; } 
+.icn.rugbyfr2 { background-position: -7770px 0; } 
+.icn.rugbysn { background-position: -7812px 0; } 
+.icn.Rugbyuc { background-position: -7854px 0; } 
+.icn.rugbyuk { background-position: -7896px 0; } 
+.icn.rugbyxvc { background-position: -7938px 0; } 
+.icn.rugbyxvs { background-position: -7980px 0; } 
+.icn.sc { background-position: -8022px 0; } 
+.icn.scc { background-position: -8064px 0; } 
+.icn.sccl { background-position: -8106px 0; } 
+.icn.Ski { background-position: -8148px 0; } 
+.icn.Snooker { background-position: -8190px 0; } 
+.icn.Tele { background-position: -8232px 0; } 
+.icn.Tennisdetable { background-position: -8274px 0; } 
+.icn.Tennis { background-position: -8316px 0; } 
+.icn.tennisau { background-position: -8358px 0; } 
+.icn.tenniscd { background-position: -8400px 0; } 
+.icn.tennisfr { background-position: -8442px 0; } 
+.icn.tennisuk { background-position: -8484px 0; } 
+.icn.tennisus { background-position: -8526px 0; } 
+.icn.tr { background-position: -8568px 0; } 
+.icn.tv { background-position: -8610px 0; } 
+.icn.ufc { background-position: -8652px 0; } 
+.icn.uk { background-position: -8694px 0; } 
+.icn.uk2 { background-position: -8736px 0; } 
+.icn.ukc { background-position: -8778px 0; } 
+.icn.ukcl { background-position: -8820px 0; } 
+.icn.uksc { background-position: -8862px 0; } 
+.icn.us { background-position: -8904px 0; } 
+.icn.uy { background-position: -8946px 0; } 
+.icn.Volley { background-position: -8988px 0; } 
+.icn.wta { background-position: -9030px 0; } 
+.icn.wwe { background-position: -9072px 0; height: 30px; } 
