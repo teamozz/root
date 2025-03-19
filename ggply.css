@@ -1,0 +1,119 @@
+    #kakarotvideo {
+      max-width: 800px;
+      width: 100%;
+      margin: auto;
+      overflow: hidden;
+      box-shadow: 0 2px 6px -1px rgb(7 10 25 / 5%), 0 6px 12px -6px rgb(7 10 25 / 10%);
+      border-radius: 8px;
+    }
+
+    .vi-on {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      background: #000;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .vi-on img, .vi-on iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .vi-on img {
+      opacity: 0.95;
+    }
+
+    .play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.3, 1);
+    }
+
+    .play:hover {
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+
+    .play span {
+      border: 15px solid transparent;
+      border-left-color: #fff;
+      margin-left: 18px;
+    }
+
+    .servideo {
+      display: flex;
+      gap: 10px;
+      padding: 12px;
+      font-size: 13px;
+      background: #1a1a1a;
+      overflow-x: auto;
+    }
+
+    .servideo::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    .servideo::-webkit-scrollbar-thumb {
+      background: #20B2AA;
+      border-radius: 4px;
+    }
+
+    .servideo .change-video {
+      background: #222;
+      color: #eee;
+      border-radius: 4px;
+      padding: 4px 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center; 
+      gap: 5px;
+      transition: background 0.4s;
+      white-space: nowrap;
+    }
+
+    .change-video img {
+      width: 16px;
+      border-radius: 2px;
+      max-width: none; /* Override the global max-width */
+      max-height: none; /* Prevent global height adjustments */
+    }
+
+    .change-video.bactive, .change-video:hover {
+      background: #20B2AA;
+      color: #222;
+    }
+
+.change-video.bactive:before {
+  content: "";
+  line-height: 1; 
+  vertical-align: middle;
+  display: inline-block;
+  width: 16px; /* Adjust size */
+  height: 16px; /* Adjust size */
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M8 5v14l11-7z" /></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s;
+}
+
+    @media (max-width: 800px) {
+      body {
+        padding: 0 15px;
+      }
+    }
+Explain
